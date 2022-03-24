@@ -5,9 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python面试, 八大山人">
-    <meta name="description" content="浅拷贝和深拷贝的区别当对象单一的时候(没有子对象时)，深拷贝和浅拷贝可以看作是一样的当对象有子对象的时候，浅拷贝不拷贝子对象，内存地址是一样的；深拷贝要拷贝子对象，内存地址是不一样的
-a = [1,2,3,[4,5]]
-b = copy.c">
+    <meta name="description" content="主要是在面试的时候遇到的一些问题浅拷贝和深拷贝的区别当对象单一的时候(没有子对象时)，深拷贝和浅拷贝可以看作是一样的当对象有子对象的时候，浅拷贝不拷贝子对象，内存地址是一样的；深拷贝要拷贝子对象，内存地址是不一样的
+a = [1,2,3,[">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -495,7 +494,7 @@ b = copy.c">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    245
+                    277
                 </div>
                 
 
@@ -520,23 +519,23 @@ b = copy.c">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="浅拷贝和深拷贝的区别"><a href="#浅拷贝和深拷贝的区别" class="headerlink" title="浅拷贝和深拷贝的区别"></a>浅拷贝和深拷贝的区别</h1><p>当对象单一的时候(没有子对象时)，深拷贝和浅拷贝可以看作是一样的<br>当对象有子对象的时候，浅拷贝不拷贝子对象，内存地址是一样的；深拷贝要拷贝子对象，内存地址是不一样的</p>
-<pre class="line-numbers language-none"><code class="language-none">a = [1,2,3,[4,5]]
-b = copy.copy(a)
-c = copy.deepcopy(a)
-id(a)!=id(b)
-id(a)!=id(c)
-id(b)!=id(c)
-id(a[3])==id(b[3])
-id(a[3])!=id(c[3])
-a.append(7)
-a[3].append(6)
-#a=[1, 2, 3, [4, 5, 6], 7]
-#b=[1,2,3,[4,5,6]]
-#c=[1,2,3,[4,5]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="主要是在面试的时候遇到的一些问题"><a href="#主要是在面试的时候遇到的一些问题" class="headerlink" title="主要是在面试的时候遇到的一些问题"></a>主要是在面试的时候遇到的一些问题</h1><h1 id="浅拷贝和深拷贝的区别"><a href="#浅拷贝和深拷贝的区别" class="headerlink" title="浅拷贝和深拷贝的区别"></a>浅拷贝和深拷贝的区别</h1><p>当对象单一的时候(没有子对象时)，深拷贝和浅拷贝可以看作是一样的<br>当对象有子对象的时候，浅拷贝不拷贝子对象，内存地址是一样的；深拷贝要拷贝子对象，内存地址是不一样的</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+b <span class="token operator">=</span> copy<span class="token punctuation">.</span>copy<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+c <span class="token operator">=</span> copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token builtin">id</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token builtin">id</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token builtin">id</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token builtin">id</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span class="token builtin">id</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token builtin">id</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span class="token builtin">id</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token builtin">id</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token builtin">id</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token builtin">id</span><span class="token punctuation">(</span>c<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+a<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+<span class="token comment">#a=[1, 2, 3, [4, 5, 6], 7]</span>
+<span class="token comment">#b=[1,2,3,[4,5,6]]</span>
+<span class="token comment">#c=[1,2,3,[4,5]]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="字典和列表的底层实现原理"><a href="#字典和列表的底层实现原理" class="headerlink" title="字典和列表的底层实现原理"></a>字典和列表的底层实现原理</h1><p>字典和列表底层都是散列表:hash(hashable)%k,对键进行hash运算后进行取余<br>字典是通过键值直接计算得到对应的地址空间</p>
 <h1 id="Django处理请求的流程"><a href="#Django处理请求的流程" class="headerlink" title="Django处理请求的流程"></a>Django处理请求的流程</h1><h1 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h1><h1 id="魔法方法"><a href="#魔法方法" class="headerlink" title="魔法方法"></a>魔法方法</h1><h1 id="os与sys两模块的区别"><a href="#os与sys两模块的区别" class="headerlink" title="os与sys两模块的区别"></a>os与sys两模块的区别</h1><h1 id="args为什么-kwargs在前"><a href="#args为什么-kwargs在前" class="headerlink" title="*args为什么**kwargs在前"></a>*args为什么**kwargs在前</h1><p>args:元组，kwargs:字典，关键字参数</p>
-
+<h1 id="Django和Fastapi"><a href="#Django和Fastapi" class="headerlink" title="Django和Fastapi"></a>Django和Fastapi</h1><h1 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h1><h1 id="协程、进程、线程"><a href="#协程、进程、线程" class="headerlink" title="协程、进程、线程"></a>协程、进程、线程</h1><h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1>
                 
             </div>
             <hr/>
