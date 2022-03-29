@@ -5,8 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Hexo, 八大山人">
-    <meta name="description" content="文章模板设置scaffolds里面添加相关的配置选项
-常见问题hexo使用theme出现{% extends ‘_layout.swig‘ %} {% import ‘_macro/post.swig‘ as post_template %">
+    <meta name="description" content="简单使用
+生成文章hexo new “blogname”
+清空静态文件hexo clean
+部署到服务器hexo -g &amp;amp;&amp;amp; hexo -d文章模板设置scaffolds里面添加相关的配置选项常见问题hexo使用theme出">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -487,14 +489,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-24
+                    2022-03-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    71
+                    130
                 </div>
                 
 
@@ -519,11 +521,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="文章模板设置"><a href="#文章模板设置" class="headerlink" title="文章模板设置"></a>文章模板设置</h1><p>scaffolds里面添加相关的配置选项</p>
-<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="hexo使用theme出现"><a href="#hexo使用theme出现" class="headerlink" title="hexo使用theme出现"></a>hexo使用theme出现</h2><pre class="line-numbers language-none"><code class="language-none">{% extends ‘_layout.swig‘ %} {% import ‘_macro/post.swig‘ as post_template %}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>原因：Hexo在5.0之后把swig给删除了，需要自己手动安装</p>
-<pre class="line-numbers language-none"><code class="language-none">npm i hexo-renderer-swig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1 id="可变对象和不可变对象"><a href="#可变对象和不可变对象" class="headerlink" title="可变对象和不可变对象"></a>可变对象和不可变对象</h1>
+                <h1 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h1><ul>
+<li>生成文章<br>hexo new “blogname”</li>
+<li>清空静态文件<br>hexo clean</li>
+<li>部署到服务器<br>hexo -g &amp;&amp; hexo -d<h1 id="文章模板设置"><a href="#文章模板设置" class="headerlink" title="文章模板设置"></a>文章模板设置</h1>scaffolds里面添加相关的配置选项<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="hexo使用theme出现"><a href="#hexo使用theme出现" class="headerlink" title="hexo使用theme出现"></a>hexo使用theme出现</h2><pre class="line-numbers language-none"><code class="language-none">{% extends ‘_layout.swig‘ %} {% import ‘_macro/post.swig‘ as post_template %}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+原因：Hexo在5.0之后把swig给删除了，需要自己手动安装<pre class="line-numbers language-none"><code class="language-none">npm i hexo-renderer-swig<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="hexo-g出现"><a href="#hexo-g出现" class="headerlink" title="hexo -g出现"></a>hexo -g出现</h2><pre class="line-numbers language-none"><code class="language-none">FATAL {
+  err: Template render error: (unknown path)
+    Error: template names must be a string: undefined
+    ...
+    ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+这是转义的问题，查看文章中是否有些符号需要转义</li>
+</ul>
+
                 
             </div>
             <hr/>
