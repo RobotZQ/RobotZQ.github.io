@@ -4,8 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python-装饰器, 八大山人">
-    <meta name="description" content="装饰器是什么装饰器简单来说就是使用一个装饰函数来修改原函数的功能而不修改原函数。因为在Python里面一切皆对象，那么一个函数也是一个对象，所以一个函数也可以赋值给一个变量，可以通过这个变量调用该函数。调用原函数可以发现此时的原函数的功能发">
+    <meta name="keywords" content="Python-list去重, 八大山人">
+    <meta name="description" content="from functools import reduce
+
+# set方法原有顺序改变
+def set_duplicate_removal():
+    lis = [10, 3, 2, 7, 4, 6, 3, 2, 1, 7, 3]
+  ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python-装饰器 | 八大山人</title>
+    <title>Python-list去重 | 八大山人</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -333,12 +338,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python-装饰器</h1>
+                    <h1 class="description center-align post-title">Python-list去重</h1>
                 </div>
             </div>
         </div>
@@ -480,7 +485,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    415
+                    247
                 </div>
                 
 
@@ -505,61 +510,60 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="装饰器是什么"><a href="#装饰器是什么" class="headerlink" title="装饰器是什么"></a>装饰器是什么</h1><p>装饰器简单来说就是使用一个装饰函数来修改原函数的功能而不修改原函数。<br>因为在Python里面一切皆对象，那么一个函数也是一个对象，所以一个函数也可以赋值给一个变量，可以通过这个变量调用该函数。<br>调用原函数可以发现此时的原函数的功能发生了改变。<br>装饰器在加载模块的时候就已经执行了也就是在main函数前，被装饰函数要被调用才会执行。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"this is a func"</span><span class="token punctuation">)</span>
-f <span class="token operator">=</span> func  <span class="token comment"># 这里后面没有()，表示这是一个对象，函数名后面如果加上()，那么就会执行该函数</span>
-f<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment"># output: this is a func</span>
+                <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> <span class="token builtin">reduce</span>
 
-fun<span class="token punctuation">.</span>__name__
-<span class="token comment"># output: "func"</span>
-f<span class="token punctuation">.</span>__name__
-<span class="token comment"># output: "func"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># set方法原有顺序改变</span>
+<span class="token keyword">def</span> <span class="token function">set_duplicate_removal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    lis <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+    lis <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span>lis<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>lis<span class="token punctuation">)</span>
+    <span class="token comment"># {1, 2, 3, 4, 6, 7, 10}</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>lis<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># [1, 2, 3, 4, 6, 7, 10]</span>
+<span class="token comment"># set方法原有顺序不改变</span>
+<span class="token keyword">def</span> <span class="token function">set_duplicate_removal_1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    lis <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+    new_lis <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">set</span><span class="token punctuation">(</span>lis<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>new_lis<span class="token punctuation">)</span>
+    <span class="token comment"># [1, 2, 3, 4, 6, 7, 10]</span>
+    new_lis<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key<span class="token operator">=</span>lis<span class="token punctuation">.</span>index<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>new_lis<span class="token punctuation">)</span>
+    <span class="token comment"># [10, 3, 2, 7, 4, 6, 1]</span>
 
-<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>网络授权和日志</p>
-<h1 id="装饰器示例"><a href="#装饰器示例" class="headerlink" title="装饰器示例"></a>装饰器示例</h1><h2 id="不带参数"><a href="#不带参数" class="headerlink" title="不带参数"></a>不带参数</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> functools
+<span class="token comment"># 匿名函数</span>
+<span class="token keyword">def</span> <span class="token function">lambda_duplicate_removal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    lis <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+    lis1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    func <span class="token operator">=</span> <span class="token keyword">lambda</span> x<span class="token punctuation">,</span>y<span class="token punctuation">:</span>x <span class="token keyword">if</span> y <span class="token keyword">in</span> x <span class="token keyword">else</span> x <span class="token operator">+</span> <span class="token punctuation">[</span>y<span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">reduce</span><span class="token punctuation">(</span>func<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">]</span> <span class="token operator">+</span> lis<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># [10, 3, 2, 7, 4, 6, 1]</span>
+    <span class="token punctuation">[</span>lis1<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> lis <span class="token keyword">if</span> x <span class="token keyword">not</span> <span class="token keyword">in</span> lis1<span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>lis1<span class="token punctuation">)</span>
 
-<span class="token keyword">def</span> <span class="token function">log</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token decorator annotation punctuation">@functools<span class="token punctuation">.</span>wraps</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span>
-    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kw<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'call %s():'</span> <span class="token operator">%</span> func<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kw<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> wrapper<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="带参数"><a href="#带参数" class="headerlink" title="带参数"></a>带参数</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> functools
+<span class="token comment"># 列表推导式</span>
+<span class="token keyword">def</span> <span class="token function">list_comprehension_duplicate_removal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    lis <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+    lis1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>lis1<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> lis <span class="token keyword">if</span> x <span class="token keyword">not</span> <span class="token keyword">in</span> lis1<span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>lis1<span class="token punctuation">)</span>
+    <span class="token comment"># [10, 3, 2, 7, 4, 6, 1]</span>
 
-<span class="token keyword">def</span> <span class="token function">log</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token decorator annotation punctuation">@functools<span class="token punctuation">.</span>wraps</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span>
-        <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kw<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s %s():'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>text<span class="token punctuation">,</span> func<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kw<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> wrapper
-    <span class="token keyword">return</span> decorator<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-wrapper.__name__" data-language="wrapper.__name__"><code class="language-wrapper.__name__">在定义```wrapper()```的前面加上```@functools.wraps(func)```。
-## 练习
-请设计一个decorator，它可作用于任何函数上，并打印该函数的执行时间：
-```python
-import functools, time
-def decorator(fn):
-    starttime = datetime.datetime.now()
-    fn()
-    endtime = datetime.datetime.now()
-    excutedtime = endtime - starttime
-    print("%s运行时间是：%s"%(fn.__name__,excutedtime))
-    return fn
-@decorator
-def getExecutedtime():
-    time.sleep(2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="装饰器嵌套"><a href="#装饰器嵌套" class="headerlink" title="装饰器嵌套"></a>装饰器嵌套</h1><p>原函数可以被多个装饰器修饰</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@funA</span>
-<span class="token decorator annotation punctuation">@funB</span>
-<span class="token decorator annotation punctuation">@funC</span>
-<span class="token keyword">def</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">pass</span>
-<span class="token comment"># 执行顺序是从里到外，也就是离原函数越近越先执行</span>
-<span class="token comment"># 等效于 fun = funA( funB ( funC (fun) ) )</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 字典fromkeys</span>
+<span class="token keyword">def</span> <span class="token function">dict_duplicate_removal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    lis <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+    lis <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">.</span>fromkeys<span class="token punctuation">(</span>lis<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>lis<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># dict_keys([10, 3, 2, 7, 4, 6, 1])</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>lis<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># [10, 3, 2, 7, 4, 6, 1]</span>
 
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment"># dict_duplicate_removal()</span>
+    <span class="token comment"># set_duplicate_removal()</span>
+    <span class="token comment"># set_duplicate_removal_1()</span>
+    <span class="token comment"># lambda_duplicate_removal()</span>
+    <span class="token comment"># list_comprehension_duplicate_removal()</span>
+    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -585,7 +589,7 @@ def getExecutedtime():
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/04/01/python-zhuang-shi-qi/">http://example.com/2022/04/01/python-zhuang-shi-qi/</a>
+                    <a href="http://example.com/2022/04/01/python-list-qu-chong/">http://example.com/2022/04/01/python-list-qu-chong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -668,9 +672,10 @@ def getExecutedtime():
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/04/01/python-list-qu-chong/">
                     <div class="card-image">
@@ -688,9 +693,9 @@ def getExecutedtime():
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -699,6 +704,7 @@ def getExecutedtime():
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -709,13 +715,13 @@ def getExecutedtime():
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/24/python-bi-shi/">
+                <a href="/2022/04/01/python-zhuang-shi-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Python笔试">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Python-装饰器">
                         
-                        <span class="card-title">Python笔试</span>
+                        <span class="card-title">Python-装饰器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -726,35 +732,15 @@ def getExecutedtime():
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            八大山人
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%AC%94%E8%AF%95/">
-                        <span class="chip bg-color">笔试</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
                 </div>
                 
             </div>
