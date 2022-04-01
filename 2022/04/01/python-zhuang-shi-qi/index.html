@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python笔试, 八大山人">
-    <meta name="description" content="玩牌高手【玩牌高手】    给定一个长度为n的整型数组，表示一个选手在n轮内可选择的牌面分数。选手基于规则选牌，请计算所有轮结束后其可以获得的最高总分数。    选择规则如下：        1、在每轮里选手可以选择获取该轮牌面，则其总分数">
+    <meta name="keywords" content="Python-装饰器, 八大山人">
+    <meta name="description" content="装饰器是什么装饰器简单来说就是使用一个装饰函数来修改原函数的功能而不修改原函数。因为在Python里面一切皆对象，那么一个函数也是一个对象，所以一个函数也可以赋值给一个变量，可以通过这个变量调用该函数。
+def fun():
+    pri">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python笔试 | 八大山人</title>
+    <title>Python-装饰器 | 八大山人</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -333,12 +335,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python笔试</h1>
+                    <h1 class="description center-align post-title">Python-装饰器</h1>
                 </div>
             </div>
         </div>
@@ -452,33 +454,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E7%AC%94%E8%AF%95/">
-                                <span class="chip bg-color">笔试</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -487,21 +468,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-24
+                    2022-04-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-29
+                    2022-04-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    578
+                    224
                 </div>
                 
 
@@ -526,36 +507,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="玩牌高手"><a href="#玩牌高手" class="headerlink" title="玩牌高手"></a>玩牌高手</h1><p>【玩牌高手】<br>    给定一个长度为n的整型数组，表示一个选手在n轮内可选择的牌面分数。选手基于规则选牌，请计算所有轮结束后其可以获得的最高总分数。<br>    选择规则如下：<br>        1、在每轮里选手可以选择获取该轮牌面，则其总分数加上该轮牌面分数，为其新的总分数。<br>        2、选手也可不选择本轮牌面直接跳到下一轮，此时将当前总分数还原为3轮前的总分数，若当前轮次小于等于3（即在第1、2、3轮选择跳过轮次）<br>        ，则总分数置为0<br>        3、选手的初始总分数为0，且必须依次参加每一轮。<br>输入描述：<br>    第一行为一个小写逗号分割的字符串，表示n轮的牌面分数，1&lt;= n &lt;=20。<br>    分数值为整数，-100 &lt;= 分数值 &lt;= 100。<br>    不考虑格式问题。<br>输出描述：<br>    所有轮结束后选手获得的最高总分数。<br>示例1：<br>    输入:1,-5,-6,4,3,6,-2<br>    输出:11</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 递归的思想</span>
-<span class="token comment"># 前面三轮和0进行比较(找出正数)，后面每一轮都和前面三轮的总积分进行比较，找出较大的一个</span>
-<span class="token keyword">def</span> <span class="token function">findeMax</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>findeMax<span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>findeMax<span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token builtin">max</span><span class="token punctuation">(</span>findeMax<span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> findeMax<span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    <span class="token builtin">list</span> <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>findeMax<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="两数求和最小时间"><a href="#两数求和最小时间" class="headerlink" title="两数求和最小时间"></a>两数求和最小时间</h1><p>题目描述：</p>
-<p>小明数学不太好，如果他计算a+b需要花费(a+b)的时间，现在有n个数字，让小明去求这n个数字的和，求小明计算这n个数字所花费的最小时间；</p>
-<p>备注：每次都要先算最小的两个数的和，这样总时间才会最小。</p>
-<p>输入：[1,2,3]<br>输出：9<br>说明：<br>1+2需要3秒<br>3+3需要6秒<br>总共需要9秒</p>
-<p>输入：[1,2,3,4,5]<br>输出：33<br>说明：<br>1+2需要3秒<br>3+3需要6秒<br>4+5需要9秒<br>6+9需要15秒</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">getMinSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> arr<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        MinSum <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            arr<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-            arr<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> arr<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>arr<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-            MinSum <span class="token operator">+=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-            arr<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-            arr<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> MinSum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="装饰器是什么"><a href="#装饰器是什么" class="headerlink" title="装饰器是什么"></a>装饰器是什么</h1><p>装饰器简单来说就是使用一个装饰函数来修改原函数的功能而不修改原函数。<br>因为在Python里面一切皆对象，那么一个函数也是一个对象，所以一个函数也可以赋值给一个变量，可以通过这个变量调用该函数。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"this is a func"</span><span class="token punctuation">)</span>
+f <span class="token operator">=</span> func  <span class="token comment"># 这里后面没有()，表示这是一个对象，函数名后面如果加上()，那么就会执行该函数</span>
+f<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># output: this is a func</span>
+
+fun<span class="token punctuation">.</span>__name__
+<span class="token comment"># output: "func"</span>
+f<span class="token punctuation">.</span>__name__
+<span class="token comment"># output: "func"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>网络授权和日志</p>
+<h1 id="装饰器示例"><a href="#装饰器示例" class="headerlink" title="装饰器示例"></a>装饰器示例</h1><h2 id="不带参数"><a href="#不带参数" class="headerlink" title="不带参数"></a>不带参数</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">```
+<span class="token comment">## 带参数</span>
+```python<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="装饰器嵌套"><a href="#装饰器嵌套" class="headerlink" title="装饰器嵌套"></a>装饰器嵌套</h1><p>原函数可以被多个装饰器修饰</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@funA</span>
+<span class="token decorator annotation punctuation">@funB</span>
+<span class="token decorator annotation punctuation">@funC</span>
+<span class="token keyword">def</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token comment"># 执行顺序是从里到外，也就是离原函数越近越先执行</span>
+<span class="token comment"># 等效于 fun = funA( funB ( funC (fun) ) )</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -581,7 +557,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/03/24/python-bi-shi/">http://example.com/2022/03/24/python-bi-shi/</a>
+                    <a href="http://example.com/2022/04/01/python-zhuang-shi-qi/">http://example.com/2022/04/01/python-zhuang-shi-qi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -618,19 +594,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E7%AC%94%E8%AF%95/">
-                                    <span class="chip bg-color">笔试</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
-                                </a>
-                            
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -676,9 +640,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/04/01/python-zhuang-shi-qi/">
                     <div class="card-image">
@@ -696,9 +661,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -707,6 +672,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -717,13 +683,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/24/shell-jiao-ben/">
+                <a href="/2022/03/24/python-bi-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Shell脚本">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Python笔试">
                         
-                        <span class="card-title">Shell脚本</span>
+                        <span class="card-title">Python笔试</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -740,8 +706,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Shell/" class="post-category">
-                                    Shell
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
@@ -751,12 +717,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%84%9A%E6%9C%AC/">
-                        <span class="chip bg-color">脚本</span>
+                    <a href="/tags/%E7%AC%94%E8%AF%95/">
+                        <span class="chip bg-color">笔试</span>
                     </a>
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
