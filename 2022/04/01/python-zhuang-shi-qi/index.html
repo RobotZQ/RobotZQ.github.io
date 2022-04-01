@@ -482,7 +482,7 @@ def fun():
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    224
+                    275
                 </div>
                 
 
@@ -518,10 +518,26 @@ fun<span class="token punctuation">.</span>__name__
 <span class="token comment"># output: "func"</span>
 f<span class="token punctuation">.</span>__name__
 <span class="token comment"># output: "func"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>网络授权和日志</p>
-<h1 id="装饰器示例"><a href="#装饰器示例" class="headerlink" title="装饰器示例"></a>装饰器示例</h1><h2 id="不带参数"><a href="#不带参数" class="headerlink" title="不带参数"></a>不带参数</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">```
-<span class="token comment">## 带参数</span>
-```python<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h1 id="装饰器示例"><a href="#装饰器示例" class="headerlink" title="装饰器示例"></a>装饰器示例</h1><h2 id="不带参数"><a href="#不带参数" class="headerlink" title="不带参数"></a>不带参数</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> functools
+
+<span class="token keyword">def</span> <span class="token function">log</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token decorator annotation punctuation">@functools<span class="token punctuation">.</span>wraps</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kw<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'call %s():'</span> <span class="token operator">%</span> func<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kw<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> wrapper<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="带参数"><a href="#带参数" class="headerlink" title="带参数"></a>带参数</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> functools
+
+<span class="token keyword">def</span> <span class="token function">log</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">decorator</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token decorator annotation punctuation">@functools<span class="token punctuation">.</span>wraps</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kw<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s %s():'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>text<span class="token punctuation">,</span> func<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kw<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> wrapper
+    <span class="token keyword">return</span> decorator<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="装饰器嵌套"><a href="#装饰器嵌套" class="headerlink" title="装饰器嵌套"></a>装饰器嵌套</h1><p>原函数可以被多个装饰器修饰</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@funA</span>
